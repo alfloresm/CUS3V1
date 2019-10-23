@@ -5,39 +5,161 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
 
-<h4>TPuntaje</h4>
+<style>
+    .btn-circle {
+        width: 30px;
+        height: 30px;
+        padding: 6px 0px;
+        border-radius: 25px;
+        text-align: center;
+        font-size: 15px;
+        line-height: 1.42857;
+        font-weight: bold;
+    }
+</style>
+<div class="row col-lg-12 col-md-12 col-sm-6">
+    <div class="col-lg-6 col-md-12 col-sm-6">
+        <h1>Calificar participantes</h1>
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-6">
+        <h3>TANDA:</h3>
+        <h2 id="numtanda"></h2>
+    </div>
+</div>
 <hr />
+
+
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="IpPuntaje" class="control-label"></label>
-                <input asp-for="IpPuntaje" class="form-control" />
-                <span asp-validation-for="IpPuntaje" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IpNumeroJurado" class="control-label"></label>
-                <input asp-for="IpNumeroJurado" class="form-control" />
-                <span asp-validation-for="IpNumeroJurado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FkIumtCod" class="control-label"></label>
-                <select asp-for="FkIumtCod" class ="form-control" asp-items="ViewBag.FkIumtCod"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </form>
+    <div class="col-md-6 border">
+        <div class="col-lg-12 card-header">
+            <h3 class="card-title">PISTA 1</h3>
+        </div>
+        <div class="col-lg-12">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row col-xs-12 col-md-12 col-lg-12">
+                    <div class="form-group col-lg-6 col-md-6">
+                        <div class="form-group col-lg-6 col-md-6">
+                            <label asp-for="FkIumtCod" class="control-label">Codigo Participante:</label>
+                            <input asp-for="FkIumtCod" class="form-control" />
+                            <span asp-validation-for="FkIumtCod" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6 col-md-6">
+                        <label asp-for="IpPuntaje" class="col-lg-12 col-md-12 col-sm-12 control-label">Puntaje</label>
+                        <input asp-for="IpPuntaje" class="col-lg-4 col-md-4 col-sm-12 btn-danger btn-circle" type="button" value="3" />
+                        <input asp-for="IpPuntaje" class="col-lg-4 col-md-4 col-sm-12 btn-warning btn-circle" type="button" value="4" />
+                        <input asp-for="IpPuntaje" class="col-lg-4 col-md-4 col-sm-12 btn-success btn-circle" type="button" value="5" />
+                        <span asp-validation-for="IpPuntaje" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-md-6 border">
+        <div class="col-lg-12 card-header">
+            <h3 class="card-title">PISTA 2</h3>
+        </div>
+        <div class="col-lg-12">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row col-xs-12 col-md-12 col-lg-12">
+                    <div class="form-group col-lg-6 col-md-6">
+                        <div class="form-group col-lg-6 col-md-6">
+                            <label asp-for="FkIumtCod" class="control-label">Codigo Participante:</label>
+                            <input asp-for="FkIumtCod" class="form-control" />
+                            <span asp-validation-for="FkIumtCod" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6 col-md-6">
+                        <label asp-for="IpPuntaje" class="col-lg-12 col-md-12 col-sm-12 control-label">Puntaje</label>
+                        <input asp-for="IpPuntaje" class="col-lg-4 col-md-4 col-sm-12 btn-danger btn-circle" type="button" value="3" />
+                        <input asp-for="IpPuntaje" class="col-lg-4 col-md-4 col-sm-12 btn-warning btn-circle" type="button" value="4" />
+                        <input asp-for="IpPuntaje" class="col-lg-4 col-md-4 col-sm-12 btn-success btn-circle" type="button" value="5" />
+                        <span asp-validation-for="IpPuntaje" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-md-6 border">
+        <div class="col-lg-12 card-header">
+            <h3 class="card-title">PISTA 3</h3>
+        </div>
+        <div class="col-lg-12">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row col-xs-12 col-md-12 col-lg-12">
+                    <div class="form-group col-lg-6 col-md-6">
+                        <div class="form-group col-lg-6 col-md-6">
+                            <label asp-for="FkIumtCod" class="control-label">Codigo Participante:</label>
+                            <input asp-for="FkIumtCod" class="form-control" />
+                            <span asp-validation-for="FkIumtCod" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6 col-md-6">
+                        <label asp-for="IpPuntaje" class="col-lg-12 col-md-12 col-sm-12 control-label">Puntaje</label>
+                        <input asp-for="IpPuntaje" class="col-lg-4 col-md-4 col-sm-12 btn-danger btn-circle" type="button" value="3" />
+                        <input asp-for="IpPuntaje" class="col-lg-4 col-md-4 col-sm-12 btn-warning btn-circle" type="button" value="4" />
+                        <input asp-for="IpPuntaje" class="col-lg-4 col-md-4 col-sm-12 btn-success btn-circle" type="button" value="5" />
+                        <span asp-validation-for="IpPuntaje" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-md-6 border" id="pista4">
+        <div class="col-lg-12 card-header">
+            <h3 class="card-title">PISTA 4</h3>
+        </div>
+        <div class="col-lg-12">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row col-xs-12 col-md-12 col-lg-12">
+                    <div class="form-group col-lg-6 col-md-6">
+                        <div class="form-group col-lg-6 col-md-6">
+                            <label asp-for="FkIumtCod" class="control-label">Codigo Participante:</label>
+                            <input asp-for="FkIumtCod" class="form-control" />
+                            <span asp-validation-for="FkIumtCod" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6 col-md-6">
+                        <label asp-for="IpPuntaje" class="col-lg-12 col-md-12 col-sm-12 control-label">Puntaje</label>
+                        <input asp-for="IpPuntaje" class="col-lg-4 col-md-4 col-sm-12 btn-danger btn-circle" type="button" value="3" />
+                        <input asp-for="IpPuntaje" class="col-lg-4 col-md-4 col-sm-12 btn-warning btn-circle" type="button" value="4" />
+                        <input asp-for="IpPuntaje" class="col-lg-4 col-md-4 col-sm-12 btn-success btn-circle" type="button" value="5" />
+                        <span asp-validation-for="IpPuntaje" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

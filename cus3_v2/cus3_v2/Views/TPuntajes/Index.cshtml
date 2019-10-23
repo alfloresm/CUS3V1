@@ -5,11 +5,37 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+    <div class="row">
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div>
+                    <h4 class="panel-title">Eleccion de Tanda</h4>
+                </div>
+            </div>
+
+            <div class="panel panel-body form-group">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="row col-xs-12 col-md-12 col-lg-12">
+
+                        <div class="form-group  col-xs-12 col-md-12 col-lg-6">
+                            <label class="control-label">Nº Tanda:</label>
+                            <input id="codTan" asp- class="form-control" placeholder="Tanda" type="number" />
+                            <span class="text-danger"></span>
+                        </div>
+                        <div class="form-group  col-xs-12 col-md-12 col-lg-6">
+                            <hr>
+                            <a asp-action="Create" class="btn btn-block btn-success">CALIFICAR</a>
+
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
 <table class="table">
     <thead>
         <tr>
