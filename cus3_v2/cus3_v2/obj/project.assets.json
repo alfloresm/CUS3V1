@@ -12630,11 +12630,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alexandra\\Desktop\\cus3_v2\\cus3_v2\\cus3_v2.csproj",
+      "projectUniqueName": "C:\\Users\\Alexandra\\Source\\CUS3V1\\cus3_v2\\cus3_v2\\cus3_v2.csproj",
       "projectName": "cus3_v2",
-      "projectPath": "C:\\Users\\Alexandra\\Desktop\\cus3_v2\\cus3_v2\\cus3_v2.csproj",
+      "projectPath": "C:\\Users\\Alexandra\\Source\\CUS3V1\\cus3_v2\\cus3_v2\\cus3_v2.csproj",
       "packagesPath": "C:\\Users\\Alexandra\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alexandra\\Desktop\\cus3_v2\\cus3_v2\\obj\\",
+      "outputPath": "C:\\Users\\Alexandra\\Source\\CUS3V1\\cus3_v2\\cus3_v2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Alexandra\\AppData\\Roaming\\NuGet\\NuGet.Config",

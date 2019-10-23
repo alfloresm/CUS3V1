@@ -20,10 +20,7 @@
                 @Html.DisplayNameFor(model => model.IpNumeroJurado)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FkIumtCodpar)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FkIumtCodta)
+                @Html.DisplayNameFor(model => model.FkIumtCodNavigation)
             </th>
             <th></th>
         </tr>
@@ -38,10 +35,7 @@
                 @Html.DisplayFor(modelItem => item.IpNumeroJurado)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FkIumtCodpar)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FkIumtCodta)
+                @Html.DisplayFor(modelItem => item.FkIumtCodNavigation.PkIumtCod)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.PkIpCodP">Edit</a> |

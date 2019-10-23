@@ -24,14 +24,8 @@
                 <span asp-validation-for="IpNumeroJurado" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FkIumtCodpar" class="control-label"></label>
-                <input asp-for="FkIumtCodpar" class="form-control" />
-                <span asp-validation-for="FkIumtCodpar" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FkIumtCodta" class="control-label"></label>
-                <input asp-for="FkIumtCodta" class="form-control" />
-                <span asp-validation-for="FkIumtCodta" class="text-danger"></span>
+                <label asp-for="FkIumtCod" class="control-label"></label>
+                <select asp-for="FkIumtCod" class ="form-control" asp-items="ViewBag.FkIumtCod"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />

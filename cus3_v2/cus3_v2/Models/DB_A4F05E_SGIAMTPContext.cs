@@ -127,13 +127,17 @@ namespace cus3_v2.Models
 
                 entity.Property(e => e.PkIpCodP).HasColumnName("PK_IP_CodP");
 
-                entity.Property(e => e.FkIumtCodpar).HasColumnName("FK_IUMT_CODPAR");
-
-                entity.Property(e => e.FkIumtCodta).HasColumnName("FK_IUMT_CODTA");
+                entity.Property(e => e.FkIumtCod).HasColumnName("FK_IUMT_COD");
 
                 entity.Property(e => e.IpNumeroJurado).HasColumnName("IP_NumeroJurado");
 
                 entity.Property(e => e.IpPuntaje).HasColumnName("IP_Puntaje");
+
+                entity.HasOne(d => d.FkIumtCodNavigation)
+                    .WithMany(p => p.TPuntaje)
+                    .HasForeignKey(d => d.FkIumtCod)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_T_Puntaje_T_Usuario_Modalidad_Tanda");
             });
 
             modelBuilder.Entity<TTanda>(entity =>
@@ -308,7 +312,6 @@ namespace cus3_v2.Models
 
                 entity.Property(e => e.PkIumtCod)
                     .HasColumnName("PK_IUMT_COD")
-                    .HasMaxLength(10)
                     .ValueGeneratedNever();
 
                 entity.Property(e => e.FkIumtCodPart).HasColumnName("FK_IUMT_CodPart");
@@ -320,12 +323,6 @@ namespace cus3_v2.Models
                 entity.Property(e => e.IumtPuntajeTotal).HasColumnName("IUMT_PuntajeTotal");
 
                 entity.HasOne(d => d.FkIumtCodPartNavigation)
-                    .WithMany(p => p.TUsuarioModalidadTanda)
-                    .HasForeignKey(d => d.FkIumtCodPart)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_T_Usuario_Modalidad_Tanda_T_Puntaje");
-
-                entity.HasOne(d => d.FkIumtCodPart1)
                     .WithMany(p => p.TUsuarioModalidadTanda)
                     .HasForeignKey(d => d.FkIumtCodPart)
                     .OnDelete(DeleteBehavior.ClientSetNull)
