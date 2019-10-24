@@ -127,9 +127,9 @@ namespace cus3_v2.Models
 
                 entity.Property(e => e.PkIpCodP).HasColumnName("PK_IP_CodP");
 
-                entity.Property(e => e.FkIumtCod)
+                entity.Property(e => e.FkVumtCod)
                     .IsRequired()
-                    .HasColumnName("FK_IUMT_COD")
+                    .HasColumnName("FK_VUMT_COD")
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
@@ -137,11 +137,11 @@ namespace cus3_v2.Models
 
                 entity.Property(e => e.IpPuntaje).HasColumnName("IP_Puntaje");
 
-                entity.HasOne(d => d.FkIumtCodNavigation)
+                entity.HasOne(d => d.FkVumtCodNavigation)
                     .WithMany(p => p.TPuntaje)
-                    .HasForeignKey(d => d.FkIumtCod)
+                    .HasForeignKey(d => d.FkVumtCod)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_T_Puntaje_T_Usuario_Modalidad_Tanda1");
+                    .HasConstraintName("FK_T_Puntaje_T_Usuario_Modalidad_Tanda");
             });
 
             modelBuilder.Entity<TTanda>(entity =>
@@ -153,7 +153,7 @@ namespace cus3_v2.Models
                 entity.Property(e => e.PkItCodTan).HasColumnName("PK_IT_CodTan");
 
                 entity.Property(e => e.DtFechaHora)
-                    .HasColumnName("DT_Fecha_hora")
+                    .HasColumnName("DT_FechaHora")
                     .HasColumnType("smalldatetime");
 
                 entity.Property(e => e.ItEstado).HasColumnName("IT_Estado");
@@ -314,38 +314,33 @@ namespace cus3_v2.Models
 
             modelBuilder.Entity<TUsuarioModalidadTanda>(entity =>
             {
-                entity.HasKey(e => e.PkIumtCod);
+                entity.HasKey(e => e.PkVumtCod);
 
                 entity.ToTable("T_Usuario_Modalidad_Tanda");
 
-                entity.Property(e => e.PkIumtCod)
-                    .HasColumnName("PK_IUMT_COD")
+                entity.Property(e => e.PkVumtCod)
+                    .HasColumnName("PK_VUMT_COD")
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .ValueGeneratedNever();
 
-                entity.Property(e => e.FkIumtCodPart).HasColumnName("FK_IUMT_CodPart");
+                entity.Property(e => e.FkVumtCodPart).HasColumnName("FK_IUMT_CodPart");
 
-                entity.Property(e => e.FkIumtCodTan).HasColumnName("FK_IUMT_CodTan");
+                entity.Property(e => e.FkVumtCodTan).HasColumnName("FK_IUMT_CodTan");
 
                 entity.Property(e => e.IumtPista).HasColumnName("IUMT_Pista");
 
                 entity.Property(e => e.IumtPuntajeTotal).HasColumnName("IUMT_PuntajeTotal");
 
-                entity.Property(e => e.VumtEstadoUmt)
-                    .HasColumnName("VUMT_EstadoUMT")
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
-
-                entity.HasOne(d => d.FkIumtCodPartNavigation)
+                entity.HasOne(d => d.FkVumtCodPartNavigation)
                     .WithMany(p => p.TUsuarioModalidadTanda)
-                    .HasForeignKey(d => d.FkIumtCodPart)
+                    .HasForeignKey(d => d.FkVumtCodPart)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_T_Usuario_Modalidad_Tanda_T_Usuario_Modalidad");
 
-                entity.HasOne(d => d.FkIumtCodTanNavigation)
+                entity.HasOne(d => d.FkVumtCodTanNavigation)
                     .WithMany(p => p.TUsuarioModalidadTanda)
-                    .HasForeignKey(d => d.FkIumtCodTan)
+                    .HasForeignKey(d => d.FkVumtCodTan)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_T_Usuario_Modalidad_Tanda_T_Tanda");
             });

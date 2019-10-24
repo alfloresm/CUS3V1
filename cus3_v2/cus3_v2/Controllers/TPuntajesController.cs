@@ -21,7 +21,7 @@ namespace cus3_v2.Controllers
         // GET: TPuntajes
         public async Task<IActionResult> Index()
         {
-            var dB_A4F05E_SGIAMTPContext = _context.TPuntaje.Include(t => t.FkIumtCodNavigation);
+            var dB_A4F05E_SGIAMTPContext = _context.TPuntaje.Include(t => t.FkVumtCodNavigation);
             return View(await dB_A4F05E_SGIAMTPContext.ToListAsync());
         }
 
@@ -34,7 +34,7 @@ namespace cus3_v2.Controllers
             }
 
             var tPuntaje = await _context.TPuntaje
-                .Include(t => t.FkIumtCodNavigation)
+                .Include(t => t.FkVumtCodNavigation)
                 .FirstOrDefaultAsync(m => m.PkIpCodP == id);
             if (tPuntaje == null)
             {
@@ -47,10 +47,10 @@ namespace cus3_v2.Controllers
         // GET: TPuntajes/Create
         public IActionResult Create()
         {
-            //ViewData["FK_IUMT_CODTA"] = "2";
-            //ViewData["FK_IUMT_COD"] = "1152";
+            ViewData["FK_IUMT_CODTA"] = "2";
+            ViewData["IpNumeroJurado"] = "1";
 
-            ViewData["FkIumtCod"] = new SelectList(_context.TUsuarioModalidadTanda, "PkIumtCod", "PkIumtCod");
+            ViewData["FkVumtCod"] = new SelectList(_context.TUsuarioModalidadTanda, "PkIumtCod", "PkIumtCod");
             return View();
         }
 
@@ -59,7 +59,7 @@ namespace cus3_v2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PkIpCodP,IpPuntaje,IpNumeroJurado,FkIumtCod")] TPuntaje tPuntaje)
+        public async Task<IActionResult> Create([Bind("PkIpCodP,IpPuntaje,IpNumeroJurado,FkVumtCod")] TPuntaje tPuntaje)
         {
             if (ModelState.IsValid)
             {
@@ -67,7 +67,8 @@ namespace cus3_v2.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["FkIumtCod"] = new SelectList(_context.TUsuarioModalidadTanda, "PkIumtCod", "PkIumtCod", tPuntaje.FkIumtCod);
+            //ViewData["FkVumtCod"]=//concatenado de codigo participante y tanda
+            ViewData["FkVumtCod"] = new SelectList(_context.TUsuarioModalidadTanda, "PkIumtCod", "PkIumtCod", tPuntaje.FkVumtCod);
             return View(tPuntaje);
         }
 
@@ -84,7 +85,7 @@ namespace cus3_v2.Controllers
             {
                 return NotFound();
             }
-            ViewData["FkIumtCod"] = new SelectList(_context.TUsuarioModalidadTanda, "PkIumtCod", "PkIumtCod", tPuntaje.FkIumtCod);
+            ViewData["FkVumtCod"] = new SelectList(_context.TUsuarioModalidadTanda, "PkIumtCod", "PkIumtCod", tPuntaje.FkVumtCod);
             return View(tPuntaje);
         }
 
@@ -93,7 +94,7 @@ namespace cus3_v2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PkIpCodP,IpPuntaje,IpNumeroJurado,FkIumtCod")] TPuntaje tPuntaje)
+        public async Task<IActionResult> Edit(int id, [Bind("PkIpCodP,IpPuntaje,IpNumeroJurado,FkVumtCod")] TPuntaje tPuntaje)
         {
             if (id != tPuntaje.PkIpCodP)
             {
@@ -120,7 +121,7 @@ namespace cus3_v2.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["FkIumtCod"] = new SelectList(_context.TUsuarioModalidadTanda, "PkIumtCod", "PkIumtCod", tPuntaje.FkIumtCod);
+            ViewData["FkVumtCod"] = new SelectList(_context.TUsuarioModalidadTanda, "PkIumtCod", "PkIumtCod", tPuntaje.FkVumtCod);
             return View(tPuntaje);
         }
 
@@ -133,7 +134,7 @@ namespace cus3_v2.Controllers
             }
 
             var tPuntaje = await _context.TPuntaje
-                .Include(t => t.FkIumtCodNavigation)
+                .Include(t => t.FkVumtCodNavigation)
                 .FirstOrDefaultAsync(m => m.PkIpCodP == id);
             if (tPuntaje == null)
             {

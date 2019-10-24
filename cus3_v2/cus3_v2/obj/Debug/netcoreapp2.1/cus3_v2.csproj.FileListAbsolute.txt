@@ -46,7 +46,6 @@ C:\Users\Alexandra\Source\CUS3V1\cus3_v2\cus3_v2\bin\Debug\netcoreapp2.1\cus3_v2
 C:\Users\Alexandra\Source\CUS3V1\cus3_v2\cus3_v2\bin\Debug\netcoreapp2.1\cus3_v2.pdb
 C:\Users\Alexandra\Source\CUS3V1\cus3_v2\cus3_v2\bin\Debug\netcoreapp2.1\cus3_v2.Views.dll
 C:\Users\Alexandra\Source\CUS3V1\cus3_v2\cus3_v2\bin\Debug\netcoreapp2.1\cus3_v2.Views.pdb
-C:\Users\Alexandra\Source\CUS3V1\cus3_v2\cus3_v2\obj\Debug\netcoreapp2.1\cus3_v2.csprojAssemblyReference.cache
 C:\Users\Alexandra\Source\CUS3V1\cus3_v2\cus3_v2\obj\Debug\netcoreapp2.1\cus3_v2.RazorAssemblyInfo.cache
 C:\Users\Alexandra\Source\CUS3V1\cus3_v2\cus3_v2\obj\Debug\netcoreapp2.1\cus3_v2.RazorAssemblyInfo.cs
 C:\Users\Alexandra\Source\CUS3V1\cus3_v2\cus3_v2\obj\Debug\netcoreapp2.1\cus3_v2.AssemblyInfoInputs.cache
@@ -75,3 +74,4 @@ C:\Users\Alexandra\Source\CUS3V1\cus3_v2\cus3_v2\obj\Debug\netcoreapp2.1\Razor\V
 C:\Users\Alexandra\Source\CUS3V1\cus3_v2\cus3_v2\obj\Debug\netcoreapp2.1\Razor\Views\TPuntajes\Details.cshtml.g.cs
 C:\Users\Alexandra\Source\CUS3V1\cus3_v2\cus3_v2\obj\Debug\netcoreapp2.1\Razor\Views\TPuntajes\Edit.cshtml.g.cs
 C:\Users\Alexandra\Source\CUS3V1\cus3_v2\cus3_v2\obj\Debug\netcoreapp2.1\Razor\Views\TPuntajes\Index.cshtml.g.cs
+C:\Users\Alexandra\Source\CUS3V1\cus3_v2\cus3_v2\obj\Debug\netcoreapp2.1\cus3_v2.csprojAssemblyReference.cache

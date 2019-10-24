@@ -22,8 +22,8 @@
 
                         <div class="form-group  col-xs-12 col-md-12 col-lg-6">
                             <label class="control-label">Nº Tanda:</label>
-                           @* @Html.EditorFor(model => model.FK_)*@
-                            <input id="codTan" asp- class="form-control" placeholder="Tanda" type="number" />
+                            @Html.TextBox("ntanda", ViewData["FK_IUMT_CODTA"])
+                            @*<input id="codTan" asp- class="form-control" placeholder="Tanda" type="number" />*@
                             <span class="text-danger"></span>
                         </div>
                         <div class="form-group  col-xs-12 col-md-12 col-lg-6">
@@ -47,7 +47,7 @@
                 @Html.DisplayNameFor(model => model.IpNumeroJurado)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FkIumtCodNavigation)
+                @Html.DisplayNameFor(model => model.FkVumtCodNavigation)
             </th>
             <th></th>
         </tr>
@@ -62,7 +62,7 @@
                 @Html.DisplayFor(modelItem => item.IpNumeroJurado)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FkIumtCodNavigation.PkIumtCod)
+                @Html.DisplayFor(modelItem => item.FkVumtCodNavigation.PkVumtCod)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.PkIpCodP">Edit</a> |

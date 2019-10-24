@@ -10,15 +10,14 @@ namespace cus3_v2.Models
             TPuntaje = new HashSet<TPuntaje>();
         }
 
-        public string PkIumtCod { get; set; }
-        public int FkIumtCodPart { get; set; }
-        public int FkIumtCodTan { get; set; }
+        public string PkVumtCod { get; set; }
+        public int FkVumtCodPart { get; set; }
+        public int FkVumtCodTan { get; set; }
         public int? IumtPuntajeTotal { get; set; }
         public int? IumtPista { get; set; }
-        public string VumtEstadoUmt { get; set; }
 
-        public TUsuarioModalidad FkIumtCodPartNavigation { get; set; }
-        public TTanda FkIumtCodTanNavigation { get; set; }
+        public TUsuarioModalidad FkVumtCodPartNavigation { get; set; }
+        public TTanda FkVumtCodTanNavigation { get; set; }
         public ICollection<TPuntaje> TPuntaje { get; set; }
     }
 }
