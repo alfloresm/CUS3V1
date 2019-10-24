@@ -50,7 +50,7 @@ namespace cus3_v2.Controllers
             ViewData["FK_IUMT_CODTA"] = "2";
             ViewData["IpNumeroJurado"] = "1";
 
-            ViewData["FkVumtCod"] = new SelectList(_context.TUsuarioModalidadTanda, "PkIumtCod", "PkIumtCod");
+            //ViewData["FkVumtCod"] = new SelectList(_context.TUsuarioModalidadTanda, "PkIumtCod", "PkIumtCod");
             return View();
         }
 
@@ -59,16 +59,16 @@ namespace cus3_v2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PkIpCodP,IpPuntaje,IpNumeroJurado,FkVumtCod")] TPuntaje tPuntaje)
+        public async Task<IActionResult> Create([Bind("IpPuntaje,IpNumeroJurado,FkVumtCod")] TPuntaje tPuntaje)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(tPuntaje);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                //return RedirectToAction(nameof(Index));
             }
             //ViewData["FkVumtCod"]=//concatenado de codigo participante y tanda
-            ViewData["FkVumtCod"] = new SelectList(_context.TUsuarioModalidadTanda, "PkIumtCod", "PkIumtCod", tPuntaje.FkVumtCod);
+            //ViewData["FkVumtCod"] = new SelectList(_context.TUsuarioModalidadTanda, "PkIumtCod", "PkIumtCod", tPuntaje.FkVumtCod);
             return View(tPuntaje);
         }
 
