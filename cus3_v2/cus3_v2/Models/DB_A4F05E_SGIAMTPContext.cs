@@ -322,6 +322,11 @@ namespace cus3_v2.Models
 
                 entity.Property(e => e.IumtPuntajeTotal).HasColumnName("IUMT_PuntajeTotal");
 
+                entity.Property(e => e.VumtEstadoUmt)
+                    .HasColumnName("VUMT_EstadoUMT")
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
                 entity.HasOne(d => d.FkIumtCodPartNavigation)
                     .WithMany(p => p.TUsuarioModalidadTanda)
                     .HasForeignKey(d => d.FkIumtCodPart)

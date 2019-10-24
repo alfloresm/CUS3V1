@@ -15,6 +15,7 @@ namespace cus3_v2.Models
         public int FkIumtCodTan { get; set; }
         public int? IumtPuntajeTotal { get; set; }
         public int? IumtPista { get; set; }
+        public string VumtEstadoUmt { get; set; }
 
         public TUsuarioModalidad FkIumtCodPartNavigation { get; set; }
         public TTanda FkIumtCodTanNavigation { get; set; }

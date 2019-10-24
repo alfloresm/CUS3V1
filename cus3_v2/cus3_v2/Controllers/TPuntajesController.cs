@@ -47,6 +47,7 @@ namespace cus3_v2.Controllers
         // GET: TPuntajes/Create
         public IActionResult Create()
         {
+            //ViewData["FK_IUMT_CODTA"] = "2";
             ViewData["FkIumtCod"] = new SelectList(_context.TUsuarioModalidadTanda, "PkIumtCod", "PkIumtCod");
             return View();
         }
