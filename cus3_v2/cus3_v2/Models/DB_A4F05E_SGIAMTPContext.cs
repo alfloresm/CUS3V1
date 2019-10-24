@@ -127,7 +127,11 @@ namespace cus3_v2.Models
 
                 entity.Property(e => e.PkIpCodP).HasColumnName("PK_IP_CodP");
 
-                entity.Property(e => e.FkIumtCod).HasColumnName("FK_IUMT_COD");
+                entity.Property(e => e.FkIumtCod)
+                    .IsRequired()
+                    .HasColumnName("FK_IUMT_COD")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.IpNumeroJurado).HasColumnName("IP_NumeroJurado");
 
@@ -137,7 +141,7 @@ namespace cus3_v2.Models
                     .WithMany(p => p.TPuntaje)
                     .HasForeignKey(d => d.FkIumtCod)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_T_Puntaje_T_Usuario_Modalidad_Tanda");
+                    .HasConstraintName("FK_T_Puntaje_T_Usuario_Modalidad_Tanda1");
             });
 
             modelBuilder.Entity<TTanda>(entity =>
@@ -147,6 +151,10 @@ namespace cus3_v2.Models
                 entity.ToTable("T_Tanda");
 
                 entity.Property(e => e.PkItCodTan).HasColumnName("PK_IT_CodTan");
+
+                entity.Property(e => e.DtFechaHora)
+                    .HasColumnName("DT_Fecha_hora")
+                    .HasColumnType("smalldatetime");
 
                 entity.Property(e => e.ItEstado).HasColumnName("IT_Estado");
 
@@ -312,6 +320,8 @@ namespace cus3_v2.Models
 
                 entity.Property(e => e.PkIumtCod)
                     .HasColumnName("PK_IUMT_COD")
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
                     .ValueGeneratedNever();
 
                 entity.Property(e => e.FkIumtCodPart).HasColumnName("FK_IUMT_CodPart");

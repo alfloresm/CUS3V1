@@ -10,7 +10,7 @@ namespace cus3_v2.Models
             TPuntaje = new HashSet<TPuntaje>();
         }
 
-        public int PkIumtCod { get; set; }
+        public string PkIumtCod { get; set; }
         public int FkIumtCodPart { get; set; }
         public int FkIumtCodTan { get; set; }
         public int? IumtPuntajeTotal { get; set; }

@@ -15,6 +15,7 @@ namespace cus3_v2.Models
         public int? ItGanador { get; set; }
         public string VtTipoTanda { get; set; }
         public int? ItEstado { get; set; }
+        public DateTime? DtFechaHora { get; set; }
 
         public ICollection<TUsuarioModalidadTanda> TUsuarioModalidadTanda { get; set; }
     }

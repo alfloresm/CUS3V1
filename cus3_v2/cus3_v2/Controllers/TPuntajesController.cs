@@ -48,6 +48,8 @@ namespace cus3_v2.Controllers
         public IActionResult Create()
         {
             //ViewData["FK_IUMT_CODTA"] = "2";
+            //ViewData["FK_IUMT_COD"] = "1152";
+
             ViewData["FkIumtCod"] = new SelectList(_context.TUsuarioModalidadTanda, "PkIumtCod", "PkIumtCod");
             return View();
         }
